@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("partials/background.jpg");
+  background-size: cover;
+  animation: backgroundAnimation 30s linear infinite;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.content {
+  text-align: center;
+  z-index: 1;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.blood-red {
+  color: #ff0000;
+}
+
+.description {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  background-color: #ff5722;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #e64a19;
+}
+
+.social-media-icons {
+  margin-top: 2rem;
+}
+
+.social-icon {
+  margin: 0 0.5rem;
+  display: inline-block;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.social-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.social-icon:hover {
+  opacity: 1;
+}
+
+.dark-mode-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.dark-mode-icon,
+.light-mode-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+.dark-mode-btn:hover {
+  opacity: 0.7;
+}
+
+.dark-mode-btn.light-mode {
+  bottom: 80px;
+}
+
+.light-mode-icon {
+  transform: rotate(180deg);
+}
+
+/* Theme adjustments for Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Theme adjustments for Light Mode */
+body.dark-mode .title,
+body.dark-mode .description {
+  color: #000000;
+}
+
+/* Responsive adjustments for phones and tablets */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.25rem;
+  }
+
+  .social-media-icons {
+    margin-top: 1rem;
+  }
+
+  .social-icon {
+    margin: 0 0.25rem;
+  }
+
+  .dark-mode-btn {
+    bottom: 60px;
+    left: 15px;
+    padding: 8px;
+  }
+}
+
+/* Additional responsive adjustments for smaller phones */
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .dark-mode-icon,
+  .light-mode-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
